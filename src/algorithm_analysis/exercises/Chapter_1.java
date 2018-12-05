@@ -1,12 +1,14 @@
 package algorithm_analysis.exercises;
 
-import java.util.Arrays;
 
 public class Chapter_1 {
 
-    // puzzle game: just provide the method of spanning.
-    // When we have spanned a initial letter of a word, we begin to type in.
-    // If not matching, stop typing. If matching, continue.
+    /**
+     * Exercise: 1.2
+     *     puzzle game: just provide the method of spanning.
+     *     When we have spanned a initial letter of a word, we begin to type in.
+     *     If not matching, stop typing. If matching, continue.
+     */
     public static void _2(){
         String[] words = new String[]{"app","alt","je"};
 
@@ -65,8 +67,31 @@ public class Chapter_1 {
         }
     }
 
-    public static void _3(){
+    /**
+     * Exercise 1.3
+     * @param source
+     */
+    public static void _3(double source){
+       printInt((int)source);
+        if(source - (int)source > 0){
+            System.out.print(".");
+        }
+        printDouble(source-(int)source);
+    }
 
+    public static void printInt(int digit){
+        if(digit/10 > 0){
+            printInt(digit/10);
+        }
+        System.out.print(digit%10);
+    }
+
+    // I use a while for the first time. But that isn't recursive. So I change my method.
+    public static void printDouble(double digit){
+        if(digit < 1 && digit > 0.0000000001){
+            System.out.print((int)(digit*10));
+            printDouble(digit*10-(int)(digit*10));
+        }
     }
 
 
