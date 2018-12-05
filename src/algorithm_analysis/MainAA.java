@@ -9,8 +9,7 @@ import algorithm_analysis.exercises.Chapter_1;
  */
 public class MainAA {
     public static void main(String[] args) {
-        Chapter_1._3(123.123);
-
+        System.out.println(Chapter_1._5(2047));
     }
 
 }

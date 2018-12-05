@@ -94,5 +94,21 @@ public class Chapter_1 {
         }
     }
 
+    /**
+     * Exercise 1.5
+     */
+    public static int _5(int N){
+        if(N%2 == 0){
+            if(N == 0) {
+                return 0;
+            }else {
+                return _5(N+1) - 1;
+            }
+
+        }else{
+            return _5(N/2) + 1;
+        }
+    }
+
 
 }
