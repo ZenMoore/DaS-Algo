@@ -9,7 +9,7 @@ import algorithm_analysis.exercises.Chapter_1;
  */
 public class MainAA {
     public static void main(String[] args) {
-        Chapter_1._6_permute("abcdef");
+        System.out.println( 0x7FFFFFFF);
     }
 
 }
