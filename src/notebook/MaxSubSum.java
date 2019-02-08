@@ -4,6 +4,21 @@ package notebook;
  * https://www.cnblogs.com/AlvinZH/p/6795647.html
  * @author AlvinZH
  * Maximum Subsequence Sum Problem
+ *
+ * 以下算法有个缺陷是：所有默认规定最大子序列和大于零。
+ * 一个解决方案是：
+ * 从序列中找一项作为maxSum的默认值default。
+ * 可行性证明：
+ * 仅讨论上述情况的假设：即最大子序列和小于零。
+ * (写到这里发现只需要检测一下是不是所有的数字都是小于零的，若是，则取最大值）
+ * （这样可以把检测过程和取值过程合并，若取值小于零，则是了，若大于零，则重置使用如下算法。）
+ * （但这耗费线性时间。)）
+ * 若无法找出大于default的，由于default存在且这是成为上确界，自然是结果。
+ * 如可以找出，则得解。
+ * 总结：抽项或者检测-取值。
+ *
+ * 对于联机算法，显得不是这么随意，因为thisSum不仅与maxSum比较，还与0比较，解决方案：
+ * 只能采用检测-取值思路。
  */
 public class MaxSubSum {
 
@@ -107,6 +122,16 @@ public class MaxSubSum {
      * T(N)=O(N)
      */
     public static int maxSubSum4(int[] a){
+        int max = a[0];
+        for(int i:a){
+            if(i>max){
+                max = i;
+            }
+        }
+        if(max < 0){
+            return max;
+        }
+
         int maxSum = 0, thisSum = 0;
         for(int i = 0;i<a.length;i++){
             thisSum += a[i];

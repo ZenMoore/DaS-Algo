@@ -1,12 +1,12 @@
 package algorithm_analysis.exercises;
 
-public class Collection<T> {
+public class Collection_1<T> {
 
     private T[] tuple;
     private int size;
 
 
-    public Collection(T[] tuple){
+    public Collection_1(T[] tuple){
         this.tuple = tuple;
         this.size = tuple.length;
     }
