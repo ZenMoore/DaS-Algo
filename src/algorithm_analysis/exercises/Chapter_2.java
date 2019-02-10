@@ -190,7 +190,7 @@ public class Chapter_2 {
      */
     public static int _26(int[] array){
         //获取候选元
-        int[] candidates = getCand(array);‘、
+        int[] candidates = getCand(array);
         for(int i = 0, count = 0; i<candidates.length; i++,count = 0){
             for(int j = 0; j<array.length;j++){
                 if(candidates[i] == array[j]){
