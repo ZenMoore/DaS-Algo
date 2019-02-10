@@ -184,13 +184,40 @@ public class Chapter_2 {
     }
 
     /**
+     * 返回一个数组的主元素
+     * 主元素：大小为N的数组，若一个元素出现的次数超过N/2次，即为主元素。
+     * 算法概要：
+     * 1. 找出一个候选元。
+     * 2. 确定候选元为主元素。
      *
+     * 候选元：比较原数组相邻元素，如果相等添加到新数组中，如果不相等则不做处理；对新数组递归的寻找候选元也是原数组的候选元。
+     *
+     * 需要思考的细节问题：
+     * 1. 为什么新数组的候选元也是原数组的候选元。
+     * 2. 递归的终止条件。
+     * 3. 该算法的运行时间。
+     * 4. 如何避免添加新数组。
+     * 5. N为奇数时的处理。
+     *
+     * 问题解答：
+     * 2. Recursion is unnecessary if there are two or fewer elements.
+     * 3.  The running time is O(N), and satisﬁes T(N)=T(N/2)+O(N).
+     * 4. One copy of the original needs to be saved.
+     * After this, the B array, and indeed the recursion, can be avoided by placing each Bi in the A array.
+     * The difference is that the original recursive strategy implies that O(log N) arrays are used;
+     * this guarantees only two copies.
+     * 5. One way to do this is to note that if the ﬁrst N−1 elements have a majority,
+     * then the last element cannot change this. Otherwise, the last element could be a majority.
+     * Thus if N is odd, ignore the last element. Run the algorithm as before.
+     * If no majority element emerges, then return the Nth element as a candidate.
      * @param array:默认数组里面不允许存在 -1，因为-1作为标记数字。
-     * @return
+     * @return 返回主元素，如为-1则表示没有主元素。
      */
     public static int _26(int[] array){
         //获取候选元
         int[] candidates = getCand(array);
+
+        //
         for(int i = 0, count = 0; i<candidates.length; i++,count = 0){
             for(int j = 0; j<array.length;j++){
                 if(candidates[i] == array[j]){

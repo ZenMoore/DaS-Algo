@@ -11,6 +11,6 @@ import algorithm_analysis.exercises.Function_2;
  */
 public class MainAA {
     public static void main(String[] args) {
-        System.out.println(Chapter_2._18(x -> {return x-3;}, 2.8, 3.6));
+        System.out.println(Chapter_2._26(new int[]{3,3,3,4,4,4,4}));
     }
 }
