@@ -1,6 +1,8 @@
 package algorithm_analysis;
 
 import algorithm_analysis.exercises.Chapter_1;
+import algorithm_analysis.exercises.Chapter_2;
+import algorithm_analysis.exercises.Function_2;
 
 /**
  * algorithm_analysis package 包括学习过程中的示例代码、实验代码和练习题代码(在 package exercises 中)
@@ -9,7 +11,6 @@ import algorithm_analysis.exercises.Chapter_1;
  */
 public class MainAA {
     public static void main(String[] args) {
-        System.out.println( 0x7FFFFFFF);
+        System.out.println(Chapter_2._18(x -> {return x-3;}, 2.8, 3.6));
     }
-
 }
