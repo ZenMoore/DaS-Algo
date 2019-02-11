@@ -217,7 +217,7 @@ public class Chapter_2 {
         //获取候选元
         int[] candidates = getCand(array);
 
-        //
+        //一一检验所有候选元。
         for(int i = 0, count = 0; i<candidates.length; i++,count = 0){
             for(int j = 0; j<array.length;j++){
                 if(candidates[i] == array[j]){
@@ -291,6 +291,7 @@ public class Chapter_2 {
         int[] list0 = Arrays.copyOf(list,count);
         return list0;
     }
+
 
 
 }
